@@ -10,14 +10,14 @@ void usage(char **argv) {
           argv[0]);
 }
 
-context_t *init_context(int argc, char **argv) {
+config_t *init_config(int argc, char **argv) {
   if (argc < 2) {
     usage(argv);
     return NULL;
   }
 
-  context_t *context = malloc(sizeof(context_t));
-  context->file_name = argv[1];;
+  config_t *config = malloc(sizeof(config_t));
+  config->file_name = argv[1];;
 
-  return context;
+  return config;
 }

@@ -6,11 +6,11 @@
 
 #define M2H_AUTHOR "ajgae"
 
-typedef struct _context_t context_t;
+typedef struct _config_t config_t;
 
-struct _context_t {
+struct _config_t {
   char *file_name;
 };
 
 void usage(char **argv);
-context_t *init_context(int argc, char **argv);
+config_t *init_config(int argc, char **argv);

@@ -8,14 +8,16 @@
 
 ## Markdown rules
 
-*This* is the beginning of a paragraph
+This is the beginning of a paragraph
 which is continued **here**.
 
 This is a new paragraph. Italics and bold text *do not...
 
 ... carry across* paragraphs, titles or list elements.
 
-- [ ] paragraphs
+####### test
+
+- [x] paragraphs
   - insert a space instead of a `\n` between lines in the same
     paragraph
   - two lines mark the separation between paragraph and previous/next
@@ -23,7 +25,7 @@ This is a new paragraph. Italics and bold text *do not...
 - [ ] horizontal rule
   - three or more asterisks, dashes or underscodes on their own line
   - must be separated above and below by an empty line
-- [ ] titles (no alternate == or -- syntax)
+- [x] titles (no alternate == or -- syntax)
   - must be separated above and below by an empty line
 - [ ] italicized *text*
   - does not carry across paragraphs / different elements (titles,
