@@ -1,6 +1,7 @@
 
 #include "block.h"
 #include "inline.h"
+#include <sys/mman.h>
 
 bool run(config_t *config) {
   context_t context;
@@ -22,6 +23,10 @@ bool run(config_t *config) {
 
   // memory map the file for reading
   char *map = mmap(NULL, context.filesize, PROT_READ, MAP_PRIVATE, fd, 0);
+  if (map == MAP_FAILED) {
+    fprintf(stderr, "Error: could not memory map file\n");
+    return false;
+  }
   if (close(fd) == -1) {
     fprintf(stderr, "Error: could not close file\n");
     return false;
@@ -114,8 +119,7 @@ bool run(config_t *config) {
       case '\n':
         if (context.curr_char < context.filesize - 1 &&
             map[context.curr_char + 1] == '\n') {
-          printf("</p>\n");
-          context.curr_block = BLOCK_NONE;
+          close_block(&context);
         } else {
           putc(' ', stdout);
         }
