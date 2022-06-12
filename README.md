@@ -23,17 +23,17 @@ This is a new paragraph. Italics and bold text *do not...
     paragraph
   - two lines mark the separation between paragraph and previous/next
     element
-- [ ] horizontal rule
+- [x] horizontal rule
   - three or more asterisks, dashes or underscodes on their own line
   - must be separated above and below by an empty line
 - [x] titles (no alternate == or -- syntax)
   - must be separated above and below by an empty line
-- [ ] italicized *text*
+- [x] italicized *text*
   - does not carry across paragraphs / different elements (titles,
     etc.)
   - issue a warning if started and not finished by the end of the
     paragraph / title
-- [ ] bold **text**
+- [x] bold **text**
   - see notes about italicized text
 - [ ] inline code 
   - [ ] `simple`
