@@ -33,8 +33,10 @@ bool run(config_t *config) {
   }
 
   for (; context.curr_char < context.filesize; ++(context.curr_char)) {
+    // defer line incrementation to the end for correct logging
+    bool increment_line = false;
     if (map[context.curr_char] == '\n') {
-      context.curr_line += 1;
+      increment_line = true;
     }
 
     switch (context.curr_block) {
@@ -129,6 +131,9 @@ bool run(config_t *config) {
         break;
       }
       break;
+    }
+    if (increment_line) {
+        context.curr_line += 1;
     }
   }
 
