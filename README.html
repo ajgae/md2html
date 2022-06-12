@@ -1,9 +1,10 @@
 <h1>md2html - a simple C utility to convert Markdown to HTML</h1>
 <h2>Roadmap</h2>
-<p>- [x] read file into memory (with fixed maximum for now) - [x] scaffolding for clean program (separate init, exec) - [ ] basic conversion</p>
+<p>- [x] read file into memory - [x] scaffolding for clean program (separate init, exec) - [x] basic conversion - [ ] implement more rules</p>
+<hr>
 <h2>Markdown rules</h2>
 <p>This is the beginning of a paragraph which is continued <strong>here</strong>.</p>
 <p>This is a new paragraph. Italics and bold text <em>do not...</em></p>
 <p>... carry across<em> paragraphs, titles or list elements.</em></p>
-<h6>test</h6>
+<h6>There are more than six '#' here</h6>
 <p>- [x] paragraphs   - insert a space instead of a `\n` between lines in the same     paragraph   - two lines mark the separation between paragraph and previous/next     element - [ ] horizontal rule   - three or more asterisks, dashes or underscodes on their own line   - must be separated above and below by an empty line - [x] titles (no alternate == or -- syntax)   - must be separated above and below by an empty line - [ ] italicized <em>text</em>   - does not carry across paragraphs / different elements (titles,     etc.)   - issue a warning if started and not finished by the end of the     paragraph / title - [ ] bold <strong>text</strong>   - see notes about italicized text - [ ] inline code    - [ ] `simple`   - [ ] ``with `backticks` included``   - see notes about italicized text - [ ] blockquotes   - can contain multiple paragraphs; lines between paragraphs should     then start with `>`, or multiple blockquote elements will be     created (one for each paragraph)   - must be separated above and below by an empty line - [ ] links   - look like this: `[Text](https://example.com)`   - text simply enclosed in braces e.g. `[Text]` not followed by     parentheses should not be counted as link; how? - [ ] lists   - [ ] unordered   - [ ] ordered   - [ ] with sublists</p>

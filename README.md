@@ -2,12 +2,13 @@
 
 ## Roadmap
 
-- [x] read file into memory (with fixed maximum for now)
+- [x] read file into memory
 - [x] scaffolding for clean program (separate init, exec)
-- [ ] basic conversion
+- [x] basic conversion
+- [ ] implement more rules
 
+***
 ## Markdown rules
-
 This is the beginning of a paragraph
 which is continued **here**.
 
@@ -15,7 +16,7 @@ This is a new paragraph. Italics and bold text *do not...
 
 ... carry across* paragraphs, titles or list elements.
 
-####### test
+####### There are more than six '#' here
 
 - [x] paragraphs
   - insert a space instead of a `\n` between lines in the same

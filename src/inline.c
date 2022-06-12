@@ -5,35 +5,38 @@
 // This function should be called in a context where
 // map[context->curr_char] cannot be a newline character (handle that
 // case before calling this function).
-void inline_output(context_t *context, char *map) {
-  char c = map[context->curr_char];
+void inline_output(context_t *ctx) {
+  char c = ctx->map[ctx->offs];
   switch (c) {
   case '*':
     // TODO avoid weird behaviours and inserting multiple opening and
     // closing tags when more than three '*' are present in a row
-    if (context->curr_char + 1 < context->filesize &&
-        map[context->curr_char + 1] == '*') {
+    if (ctx->offs + 1 < ctx->filesize &&
+        ctx->map[ctx->offs + 1] == '*') {
       // bold
-      context->curr_char += 1; // account for extra '*'
-      if (!context->inline_styles.strong) {
+      ctx->offs += 1; // account for extra '*'
+      if (!ctx->inline_styles.strong) {
         printf("<strong>");
-        context->inline_styles.strong = true;
+        ctx->inline_styles.strong = true;
       } else {
         printf("</strong>");
-        context->inline_styles.strong = false;
+        ctx->inline_styles.strong = false;
       }
     } else {
       // em
-      if (!context->inline_styles.em) {
+      if (!ctx->inline_styles.em) {
         printf("<em>");
-        context->inline_styles.em = true;
+        ctx->inline_styles.em = true;
       } else {
         printf("</em>");
-        context->inline_styles.em = false;
+        ctx->inline_styles.em = false;
       }
     }
     break;
   default:
     putc(c, stdout);
+    break;
   }
+
+  ctx->offs += 1;
 }

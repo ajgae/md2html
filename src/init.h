@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 #define M2H_AUTHOR "ajgae"
 
@@ -13,4 +14,4 @@ struct _config_t {
 };
 
 void usage(char **argv);
-config_t *init_config(int argc, char **argv);
+bool init_config(config_t *cfg, int argc, char **argv);

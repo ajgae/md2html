@@ -4,4 +4,4 @@
 
 #include "context.h"
 
-void inline_output(context_t *context, char *map);
+void inline_output(context_t *context);

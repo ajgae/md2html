@@ -17,16 +17,19 @@ enum block_element {
 
 typedef struct _context_t context_t;
 struct _context_t {
+  // pointer to the memory-mapped file
+  char *map;
   // filesize of file to be converted
   size_t filesize;
-  // number of consecutive '\n' chars encountered
-  size_t num_lf;
+  // count of consecutive '\n' chars encountered
+  size_t lf_cnt;
   // type of the block element we're currently in
   enum block_element curr_block;
+  enum block_element prev_block;
   // current line in the file
-  size_t curr_line;
-  // byte offset in the file
-  size_t curr_char;
+  size_t line;
+  // char offset in the file
+  size_t offs;
 
   // defines what inline styles are
   struct {
