@@ -1,42 +1,16 @@
 #pragma once
 
-#include <unistd.h>
-#include <stdbool.h>
-#include <stdio.h>
+#include <unistd.h> // size_t
+#include <stdbool.h> // bool
 
-enum block_element {
-  BLOCK_NONE = 0,
-  BLOCK_H1,
-  BLOCK_H2,
-  BLOCK_H3,
-  BLOCK_H4,
-  BLOCK_H5,
-  BLOCK_H6,
-  BLOCK_P,
-};
+#include "config.h"
 
 typedef struct _context_t context_t;
 struct _context_t {
-  // pointer to the memory-mapped file
-  char *map;
-  // filesize of file to be converted
-  size_t filesize;
-  // count of consecutive '\n' chars encountered
-  size_t lf_cnt;
-  // type of the block element we're currently in
-  enum block_element curr_block;
-  enum block_element prev_block;
-  // current line in the file
-  size_t line;
-  // char offset in the file
-  size_t offs;
-
-  // defines what inline styles are
-  struct {
-    bool em;
-    bool strong;
-  } inline_styles;
+  char *file_mmap;
+  size_t file_size;
 };
 
-void init_context(context_t *context);
+// Initialize the context from the given config.
+bool init_context(context_t *ctx, config_t const *cfg);
 

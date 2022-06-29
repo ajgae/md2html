@@ -1,5 +1,11 @@
+CC=gcc
+SRC=src/main.c \
+	src/config.c \
+	src/context.c \
+	src/blocks.c \
+	src/header.c \
+	src/utils.c
 
-.PHONY: clean
-clean:
-	rm src/*.o
-	rm a.out
+.PHONY: all
+all:
+	$(CC) $(SRC) -ggdb

@@ -1,14 +1,9 @@
 # md2html - a simple C utility to convert Markdown to HTML
 
-## Roadmap
-
-- [x] read file into memory
-- [x] scaffolding for clean program (separate init, exec)
-- [x] basic conversion
-- [ ] implement more rules
-
 ***
+
 ## Markdown rules
+
 This is the beginning of a paragraph
 which is continued **here**.
 
