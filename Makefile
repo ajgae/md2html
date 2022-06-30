@@ -4,6 +4,7 @@ SRC=src/main.c \
 	src/context.c \
 	src/blocks.c \
 	src/header.c \
+	src/paragraph.c \
 	src/utils.c
 
 .PHONY: all

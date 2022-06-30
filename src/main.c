@@ -4,12 +4,21 @@
 
 #include "config.h"
 #include "blocks.h"
-#include "common.h"
+#include "helpers.h"
+
+#define M2H_AUTHOR "ajgae"
+
+#define M2H_RETVAL_SUCCESS 0
+#define M2H_RETVAL_EXECFAIL 1
+#define M2H_RETVAL_INITFAIL 2
+
+// most permissive log level by default
+m2h_loglevel_t loglevel = M2H_LOGLEVEL_NOTE;
 
 void usage(char **argv) {
   fprintf(stderr,
           "Usage: %s FILENAME\n"
-          "Made by " M2H_AUTHOR ".\n",
+          "(C) " M2H_AUTHOR ".\n",
           argv[0]);
 }
 

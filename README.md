@@ -1,9 +1,7 @@
 # md2html - a simple C utility to convert Markdown to HTML
-
 ***
 
 ## Markdown rules
-
 This is the beginning of a paragraph
 which is continued **here**.
 
